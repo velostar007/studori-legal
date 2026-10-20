@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studori Gizlilik Politikası</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1a1a2e; --muted:#5b6270; --bg:#ffffff; --card:#f6f7f9; --line:#e3e6ea; --accent:#e07b00; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#eceef2; --muted:#a4abb8; --bg:#14161b; --card:#1d2027; --line:#2d313a; --accent:#ffa033; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 780px; margin: 0 auto; padding: 28px 18px 60px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 34px 0 8px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+  ul { padding-left: 1.2rem; } li { margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 10px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  a { color: var(--accent); }
+  mark { background: #fff3a8; color: #000; padding: 0 3px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Studori Gizlilik Politikası</h1>
+<p class="meta">Son güncelleme: 17 Ekim 2026 &middot; Uygulama: Studori (com.studori.studori), Android</p>
+
+<div class="card">
+  <strong>Kısaca:</strong> Studori'de hesap açmazsın. PDF'lerin, testlerin, notların ve
+  ilerlemen varsayılan olarak yalnızca telefonunda durur. Uygulamada reklam, Google
+  Analytics veya pazarlama amaçlı davranış profillemesi yoktur. Hata teşhisi için
+  Firebase Crashlytics kullanılır. Aşağıda sayılan hizmetler dışında verin hiçbir yere
+  gönderilmez.
+</div>
+
+<h2>1. Veri sorumlusu ve iletişim</h2>
+<p>Uygulamanın geliştiricisi: Veli Abrak<br>
+İletişim: <a href="mailto:studorisupport@gmail.com">studorisupport@gmail.com</a></p>
+
+<h2>2. Telefonunda saklanan veriler</h2>
+<p>Eklediğin PDF'ler, oluşturduğun testler ve sorular, cevap anahtarları, notlar,
+çizimler, program ve hatırlatıcı ayarların, çalışma ilerlemen ve istatistiklerin
+telefonunun uygulama alanında saklanır. Geliştirici bu verilere erişemez ve bunları
+bir sunucuya göndermez. Uygulamayı telefondan kaldırırsan bu veriler silinir.</p>
+<p>PDF'lerden soru tespiti için kullanılan metin tanıma (Google ML Kit) tamamen
+cihaz üstünde çalışır; PDF içeriğin internete gönderilmez.</p>
+
+<h3>Android sistem yedeği (Drive yedeğinden ayrıdır)</h3>
+<p>Android, cihazının ayarlarına bağlı olarak uygulama verilerini Google hesabına
+otomatik yedekleyebilir veya yeni bir cihaza aktarabilir. Bu, Android'in kendi
+özelliğidir ve aşağıda anlatılan, yalnızca senin açtığın Google Drive yedekleme ve
+eşitleme özelliğinden ayrıdır.</p>
+<ul>
+  <li><strong>Neler dahildir:</strong> Studori, Android sistem yedeğine yalnızca
+  abonelik hizmeti RevenueCat'in cihazda tuttuğu küçük bir tercih dosyasını dahil
+  eder. Bu dosya RevenueCat'in anonim kullanıcı kimliğini ve abonelik/erişim
+  durumuna ilişkin önbelleği içerebilir.</li>
+  <li><strong>Ne için:</strong> Uygulamayı yeniden kurduğunda ya da yeni bir cihaza
+  geçtiğinde satın alma kaydının sürmesine yardımcı olmak için kullanılabilir.</li>
+  <li><strong>Neler dahil değildir:</strong> RevenueCat'e ait sınırlı tercih kaydı
+  dışında Studori'nin PDF, test, soru, not, çizim, görsel, kullanıcı ayarı ve diğer
+  kullanıcı içerikleri Android sistem yedeğine alınmaz.</li>
+</ul>
+
+<h3>Cihazdan video ekleme</h3>
+<p>Telefonundaki bir videoyu kütüphaneye eklemek için Android'in kendi dosya
+seçicisini kullanırız; uygulama genel bir depolama izni istemez ve yalnızca seçtiğin
+videoya erişir. Video dosyası kopyalanmaz, olduğu yerde oynatılır (Android'in
+kalıcı erişim sınırı dolarsa, yalnızca sen onaylarsan uygulamanın kendi alanına
+kopyalanır). Video, hiçbir sunucuya yüklenmez. Videonun adı, boyutu ve izleme
+ilerlemen telefonundaki kayıtta ve (açtıysan) Drive yedeğinde yer alabilir; video
+dosyasının kendisi ve küçük resmi yedeğe ya da eşitlemeye dahil edilmez.</p>
+
+<h2>3. Kullandığımız üçüncü taraf hizmetler</h2>
+
+<h3>Google Drive yedekleme ve eşitleme (isteğe bağlı)</h3>
+<ul>
+  <li>Bu özellik, yukarıda anlatılan Android sistem yedeğinden bağımsızdır.
+  Yalnızca sen açarsan çalışır. Google hesabınla giriş yapılır ve yalnızca
+  <code>drive.appdata</code> yetkisi istenir: bu, uygulamaya özel, Drive'ında görünmeyen
+  gizli bir klasördür. Drive'daki diğer dosyalarına erişilmez.</li>
+  <li>Yedek ve eşitleme dosyaları senin kendi Google Drive hesabında tutulur;
+  geliştirici bu dosyalara erişemez. Aynı Google hesabındaki cihazların verileri bu
+  yolla birleştirir.</li>
+  <li>Google hesabının e-posta adresi yalnızca bağlantı durumunu göstermek için
+  telefonunda tutulur.</li>
+  <li>Bu veriyi silmek için uygulamada Ayarlar &rarr; Yedekleme bölümündeki
+  &ldquo;Drive'daki tüm verilerimi sil&rdquo; düğmesini kullanabilirsin: tüm yedek
+  ve eşitleme dosyaları Drive'dan silinir ve eşitleme kapanır. Dilersen Google
+  hesabının Drive ayarlarından uygulamaya ait gizli veriyi silebilir ya da
+  bağlantıyı kesebilirsin.</li>
+</ul>
+
+<h3>Firebase Crashlytics (çökme raporları)</h3>
+<ul>
+  <li><strong>Ne zaman çalışır:</strong> Uygulama çöktüğünde ya da beklenmeyen bir
+  hata oluştuğunda, hatayı bulup düzeltebilmemiz için bir rapor Google'ın Firebase
+  Crashlytics hizmetine gönderilir. Bu, uygulamanın yayınlanan sürümünde otomatik
+  çalışır. Şu an uygulama içinde raporları kapatan bir ayar yoktur.</li>
+  <li><strong>Rapora neler girer:</strong> Hata veya çökme izi (hatanın kodun
+  neresinde olduğu), hata mesajı, uygulama sürümü ve durumu, cihaz modeli ve teknik
+  özellikleri, Android sürümü ve hatanın zamanı. Bunlara ek olarak Firebase'in
+  ürettiği rastgele kurulum kimlikleri ve oturum kimliği de rapora girer. Studori
+  rapora kendi eklediği bir kullanıcı kimliği, özel anahtar ya da özel günlük kaydı
+  koymaz.</li>
+  <li><strong>İçerikle ilgili not:</strong> Studori PDF, not veya çalışma içeriğini
+  bilerek rapora eklemez. Ancak bir hata mesajının veya dosya yolunun içinde (örneğin
+  bir dosyanın adında) sınırlı teknik bilgi istemeden bulunabilir.</li>
+  <li><strong>Hangi bileşenler vardır:</strong> Crashlytics ile birlikte Firebase'in
+  kurulum (Installations), oturum (Sessions) ve veri gönderme (Data Transport)
+  bileşenleri de uygulamada bulunur: ilki rastgele bir kurulum kimliği üretir,
+  ikincisi her kullanım oturumuna rastgele bir kimlik verir, üçüncüsü raporu Google'a
+  iletir. Uygulamada Google Analytics (Firebase Analytics) SDK'sı yoktur.</li>
+  <li><strong>Amaç ve saklama:</strong> Bu veriler yalnızca hataları bulup gidermek
+  ve uygulamanın kararlılığını artırmak için kullanılır. Firebase, Crashlytics
+  verilerini yaklaşık 90 gün saklar, ardından silme sürecini başlatır. Ayrıntılar için
+  <a href="https://firebase.google.com/support/privacy">Firebase gizlilik ve güvenlik
+  sayfasına</a> bakabilirsin.</li>
+</ul>
+
+<h3>Abonelik: Google Play ve RevenueCat</h3>
+<ul>
+  <li>Premium abonelik Google Play Faturalandırma ile satın alınır ve RevenueCat
+  hizmetiyle yönetilir. Kart bilgilerin uygulamaya ve geliştiriciye ulaşmaz; ödemeyi
+  Google Play işler.</li>
+  <li>Studori'de hesap yoktur. RevenueCat, seni anonim bir kullanıcı kimliğiyle
+  tanır. Studori, adını veya e-posta adresini RevenueCat'e iletmez.</li>
+  <li>RevenueCat, aboneliğinin durumunu doğrulamak için bu anonim kullanıcı kimliği,
+  satın alma/abonelik bilgisi ve teknik cihaz bilgisi işler. Ayrıntılar için
+  <a href="https://www.revenuecat.com/privacy">RevenueCat gizlilik politikasına</a>
+  bakabilirsin.</li>
+  <li>Premium özelliklerin açılıp açılmadığı, RevenueCat'in bildirdiği abonelik
+  bilgisindeki aktif Premium erişim hakkına göre belirlenir. Uygulama son bilinen
+  abonelik durumunu cihazda bilgi amacıyla da saklayabilir; bu kayıt tek başına
+  Premium özellikleri açmaz.</li>
+  <li>RevenueCat'in cihazdaki küçük tercih dosyası, Android sistem yedeğine dahil
+  edilebilir (yukarıdaki &ldquo;Android sistem yedeği&rdquo; bölümüne bak).</li>
+</ul>
+
+<h3>YouTube video kütüphanesi</h3>
+<ul>
+  <li><strong>Hesap:</strong> Studori, YouTube hesabınla giriş yapmaz ve YouTube
+  hesabına erişmez. (İstersen açtığın Drive yedekleme için yapılan Google girişi
+  ayrıdır: yalnızca yukarıda anlatılan gizli uygulama klasörüne izin verir, YouTube
+  hesabına erişim vermez.)</li>
+  <li><strong>Ne alınır:</strong> Kütüphaneye bir YouTube videosu ya da oynatma
+  listesi eklediğinde, Studori YouTube Data API'sine o videonun ya da listenin
+  kimliğini göndererek şu bilgileri alabilir: video kimliği, başlık, kanal adı,
+  küçük resim, süre, yayın tarihi ve videonun erişilebilir olup olmadığı. Oynatma
+  listeleri için ayrıca listenin başlığı, kanalı, küçük resmi ve içindeki videolar
+  ile sırası alınabilir. Bu isteklerde Google, kendi politikasına göre teknik bilgi
+  (örneğin IP adresi) işleyebilir.</li>
+  <li><strong>Ne için ve ne kadar saklanır:</strong> Bu bilgiler yalnızca video
+  kütüphanesini ve videoya bağlı çalışma kayıtlarını (programdaki görevler, etkinlik
+  geçmişi) göstermek için cihazında geçici olarak saklanır.</li>
+  <li><strong>Yenileme ve temizlik:</strong> YouTube'dan alınan bilgiler 25. günden
+  itibaren otomatik yenilenmeye çalışılır (internet gerekir). Yenilenemeyen bilgiler
+  30 günlük saklama süresi dolduğunda kalıcı kayıtlardan temizlenir. Uygulama bu
+  sırada çalışmıyorsa temizlik, uygulamanın bir sonraki açılışında veya yeniden ön
+  plana gelmesinde yapılır. İnternet geri geldiğinde bilgiler YouTube'dan yeniden
+  alınır. O arada video kartında başlık yerine &ldquo;YouTube videosu&rdquo; gibi
+  genel bir ifade görünebilir.</li>
+  <li><strong>Bundan etkilenmeyenler:</strong> Kendi yazdığın başlık, notların,
+  ders/konu bilgin ve izleme ilerlemen bu temizlikten etkilenmez.</li>
+  <li><strong>Yedek ve eşitleme:</strong> YouTube'dan alınan bu bilgiler Drive
+  yedeğine ve cihazlar arası eşitleme dosyalarına eklenmez. Yalnızca video bağlantısı
+  ve sana ait bilgiler (kendi yazdığın başlık, notlar, ders/konu, ilerleme, tahmini
+  süre) yedeğe girer. Yedeği geri yüklediğinde ya da başka bir cihazda eşitlediğinde
+  YouTube bilgileri yeniden YouTube'dan alınır.</li>
+  <li><strong>Kaldırma:</strong> Bir videoyu Studori'den sildiğinde videonun kaydı
+  (izleme ilerlemen dahil), o videoya yazdığın zaman notları ve &ldquo;izlendi&rdquo;
+  etkinlik kaydı cihazından silinir. Bir oynatma listesini sildiğinde liste kaydı ve
+  içindeki tüm videolar, aynı şekilde notları, ilerlemeleri ve etkinlik kayıtlarıyla
+  birlikte silinir. Bu işlemler YouTube'daki videoyu veya oynatma listesini silmez.
+  Programdaki görevler, video not defterleri ve Genel Defter işaretçileri otomatik
+  olarak silinmez; görevlerde bulunan YouTube kaynaklı başlıklar yukarıdaki yenileme
+  ve temizlik sürelerine uyar.</li>
+  <li><strong>Oynatma:</strong> Videolar YouTube'un gömülü oynatıcısıyla oynatılır.
+  Oynatıcı doğrudan YouTube ile iletişim kurabilir; bu sırada YouTube ve Google kendi
+  gizlilik şartlarına göre veri işleyebilir.</li>
+  <li><strong>Geçerli şartlar:</strong> Bu özelliği kullanırken
+  <a href="https://www.youtube.com/t/terms">YouTube Hizmet Şartları</a>,
+  <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">YouTube
+  API Hizmetleri Kullanım Şartları</a> ve
+  <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>
+  geçerlidir.</li>
+</ul>
+
+<h3>Çeviri (Google ML Kit)</h3>
+<ul>
+  <li>Çeviri cihaz üstünde çalışır. İlk kullanımda dil modeli Google'dan indirilir;
+  çevrilen metin gönderilmez.</li>
+</ul>
+
+<h2>4. Sınıf Modu</h2>
+<ul>
+  <li>Sınıf Modu, öğretmen ve öğrenci telefonlarını aynı Wi-Fi ağı üzerinden ya da
+  öğretmenin telefonunun kurduğu yerel hotspot üzerinden birbirine bağlar. Veriler
+  yalnızca bu yerel ağdaki cihazlar arasında akar; internet üzerinden bir sunucuya
+  gönderilmez.</li>
+  <li>Öğrenci katılırken yazdığı ad ve test sonuçları öğretmenin telefonuna iletilir.
+  Test ve soru görselleri öğretmenin telefonundan öğrenci telefonlarına aktarılır.</li>
+  <li>Öğretmen, oturum sonuçlarını (öğrenci adları, cevapları, doğru/yanlış sayıları)
+  kendi telefonunda saklar ve istersen PDF rapor olarak paylaşabilir. Öğrencinin
+  çözdüğü sınıf testi yalnızca öğrencinin telefonunda kalır; öğrenci bunu istediği
+  zaman silebilir. Sınıf Modu verileri Drive yedeğine eşitleme yoluyla gönderilmez.</li>
+  <li>Bu özellik için Android, "Yakındaki cihazlar" (Android 13 ve üstü) ya da "Konum"
+  (Android 12 ve altı) izni ister. Bu izin yalnızca Android'in Wi-Fi bağlantı
+  işlevleri için gereklidir; uygulama konumunu okumaz, saklamaz ve paylaşmaz.</li>
+</ul>
+
+<h2>5. İzinler</h2>
+<table>
+  <tr><th>İzin</th><th>Ne için</th></tr>
+  <tr><td>İnternet</td><td>Drive, YouTube, abonelik, çökme raporları ve çeviri modeli indirme.</td></tr>
+  <tr><td>Kamera</td><td>Karekod okutma (Sınıf Modu'na katılma ve sorulardaki karekodları okuma). Görüntüler saklanmaz ve gönderilmez.</td></tr>
+  <tr><td>Dosya seçici (cihazdan video)</td><td>Seçtiğin videoya erişmek için Android'in kendi dosya seçicisi kullanılır; genel depolama izni istenmez.</td></tr>
+  <tr><td>Bildirimler</td><td>İstersen açtığın çalışma hatırlatıcıları. Bildirimler tamamen telefonda zamanlanır.</td></tr>
+  <tr><td>Cihaz açıldığında çalışma</td><td>Hatırlatıcıların telefon yeniden başladıktan sonra yeniden kurulması.</td></tr>
+  <tr><td>Wi-Fi ve ağ durumu, Yakındaki cihazlar / Konum</td><td>Yalnızca Sınıf Modu (yukarıya bak).</td></tr>
+</table>
+
+<h2>6. Reklam ve izleme</h2>
+<p>Uygulamada reklam yoktur. Reklam veya pazarlama amacıyla davranışını profilleyen
+bir analiz ya da izleme yapılmaz ve Google Analytics SDK'sı bulunmaz. Verilerin
+pazarlama amacıyla satılmaz veya paylaşılmaz.</p>
+<p>Bununla birlikte uygulamada yalnızca teknik amaçlı bazı bileşenler vardır: hata
+raporları için Firebase Crashlytics ve ona bağlı Firebase kurulum, oturum ve veri
+gönderme bileşenleri, abonelik için RevenueCat (ikisi de 3. bölümde anlatıldı).
+Studori bunları reklam ya da pazarlama için kullanmaz.</p>
+
+<h2>7. Çocuklar</h2>
+<p>Studori hesap oluşturmayı gerektirmez ve geliştirici olarak çocuklara ait kişisel veri
+toplamayız. Küçük yaştaki kullanıcıların uygulamayı kullanırken bir ebeveyn veya veli
+gözetiminde olmasını öneririz.</p>
+<!-- YAYIN ÖNCESİ KONTROL: Play Console'da hedef yaş grubunu bu bölümle tutarlı seç. -->
+
+<h2>8. Haklarınız ve veri silme</h2>
+<ul>
+  <li>Cihazdaki verileri uygulamayı kaldırarak silebilirsin.</li>
+  <li>Android sistem yedeğine dahil edilebilen küçük abonelik kaydı (anonim RevenueCat
+  kimliği ve abonelik durumu önbelleği), Android ve Google'ın kendi yedekleme
+  ayarlarıyla yönetilir; uygulamayı kaldırmak o yedeği kendiliğinden silmeyebilir.
+  Yedeği cihazının Android ayarlarından yönetebilirsin (menüler üreticiye göre
+  değişebilir).</li>
+  <li>Drive'daki yedek/eşitleme verisini uygulamadan (Ayarlar &rarr; Yedekleme
+  &rarr; &ldquo;Drive'daki tüm verilerimi sil&rdquo;) ya da Google hesabının Drive
+  ayarlarından silebilirsin.</li>
+  <li>Çökme raporlarındaki verin için ya da başka bir talebin için yukarıdaki iletişim
+  adresine yazabilirsin. Kişisel Verilerin Korunması Kanunu (KVKK) kapsamındaki
+  haklarını da aynı adresten kullanabilirsin.</li>
+</ul>
+
+<h2>9. Değişiklikler</h2>
+<p>Bu politika güncellenirse yeni hali bu sayfada yayınlanır ve "Son güncelleme"
+tarihi değişir. Önemli değişikliklerde uygulama içinde de bilgi veririz.</p>
+
+<h2>English summary</h2>
+<p>Studori has no accounts. Your PDFs, tests, notes and progress stay on your device by
+default. Optional Google Drive backup/sync stores data only in a hidden app-specific
+folder (<code>drive.appdata</code>) of your own Google Drive; the developer cannot access it.
+We use Firebase Crashlytics (with Firebase Installations, Sessions and Data Transport) to
+receive crash and error reports: stack trace, error message, app version and state, device
+model and technical details, Android version, timestamp, and random installation and session
+IDs. We do not deliberately include PDFs, notes or study content, but an error message or file
+path may unintentionally contain limited technical details. Firebase keeps this data for about
+90 days, and there is currently no in-app switch to turn reports off. We use Google Play
+Billing with RevenueCat for subscriptions (anonymous user ID and purchase status; card details never reach
+the app); Premium access follows the active entitlement reported by RevenueCat. Android's own system
+backup includes only RevenueCat's small preferences file (the anonymous user ID and cached
+subscription status), so a purchase can carry over after a reinstall or device change; apart from
+that limited RevenueCat preferences record, Studori's PDFs, tests, questions, notes, drawings, images,
+user settings and other user content are not included in the Android system backup. It is separate from the optional Google Drive backup/sync. The YouTube video library uses YouTube API Services (see the YouTube Terms of
+Service, the YouTube API Services Terms of Service and the Google Privacy Policy): Studori
+does not sign in to YouTube or access your YouTube account; video and playlist details fetched
+from the API are kept on your device only temporarily, refreshed from day 25, and cleared from
+storage once the 30-day retention period ends if they cannot be refreshed (if the app is not
+running at that moment, the cleanup happens the next time it is opened or brought to the
+foreground; your own titles, notes and progress are not affected), and are not included in Drive
+backups or sync files. The embedded YouTube player
+may contact YouTube directly. Text recognition and translation (Google ML Kit) run
+on-device. Videos you add from your phone are played in place through Android's file picker
+(no broad storage permission) and are never uploaded. Classroom Mode transfers data only between
+devices on the same local network; Android's Nearby devices/Location permission is required by the
+Wi-Fi APIs, and the app never reads or stores location. You can delete all backup and sync data
+from your Google Drive inside the app (Settings &rarr; Backup &rarr; delete all my Drive data).
+There are no ads, no Google Analytics SDK, and no marketing or behavioral profiling. The
+third-party services described above are used only for their stated purposes. Developer: Veli Abrak. Contact:
+<a href="mailto:studorisupport@gmail.com">studorisupport@gmail.com</a>.</p>
+
+</main>
+</body>
+</html>
