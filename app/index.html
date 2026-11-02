@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studori – PDF'lerinle çalışmanın akıllı yolu</title>
+<meta name="description" content="Studori, PDF sorularından test oluşturup çözmeni, notlar almanı, yanlışlarını tekrar etmeni ve çalışma programını tek yerden yönetmeni sağlayan bir Android çalışma uygulamasıdır.">
+<meta name="theme-color" content="#14161b">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="canonical" href="https://velostar007.github.io/studori-legal/app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studori">
+<meta property="og:description" content="PDF'lerinden test oluştur, çöz, yanlışlarını tekrar et. Hesap gerekmez; verilerin telefonunda kalır.">
+<meta property="og:image" content="https://velostar007.github.io/studori-legal/app/icon-512.png">
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg:#1a1a2e; --muted:#5b6270; --bg:#ffffff; --card:#f6f7f9; --line:#e3e6ea;
+    --accent:#e07b00; --accent-ink:#ffffff; --navy:#1c2e4d; --hero:#fff6ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg:#eceef2; --muted:#a4abb8; --bg:#14161b; --card:#1d2027; --line:#2d313a;
+      --accent:#ffa033; --accent-ink:#1a1a2e; --navy:#2a3f66; --hero:#1b1a18;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { display:flex; align-items:center; justify-content:space-between; gap:12px; padding: 16px 0; }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.15rem; color:var(--fg); text-decoration:none; }
+  .brand img { width:36px; height:36px; border-radius:9px; }
+  nav a { color: var(--muted); text-decoration:none; margin-left: 18px; font-size:.95rem; }
+  nav a:hover { color: var(--fg); }
+
+  .hero { background: var(--hero); border-bottom: 1px solid var(--line); }
+  .hero .wrap { display:grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items:center; padding-top: 44px; padding-bottom: 52px; }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); line-height:1.15; margin:0 0 14px; letter-spacing:-.02em; }
+  .hero p.lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 22px; max-width: 34em; }
+  .hero .icon { display:flex; justify-content:center; }
+  .hero .icon img { width: min(240px, 60vw); height:auto; border-radius: 22%; box-shadow: 0 18px 40px rgba(28,46,77,.18); }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; }
+  .btn { display:inline-block; padding: 11px 18px; border-radius: 10px; font-weight:600; text-decoration:none; border:1px solid var(--line); color:var(--fg); background:var(--bg); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .badge { display:inline-block; font-size:.8rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+
+  section { padding: 44px 0 6px; }
+  h2 { font-size: 1.55rem; margin: 0 0 6px; letter-spacing:-.01em; }
+  .sub { color: var(--muted); margin: 0 0 22px; max-width: 38em; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .96rem; }
+  .ico { font-size: 1.4rem; line-height:1; margin-bottom: 8px; }
+
+  ol.steps { list-style:none; counter-reset: s; padding:0; margin:0; display:grid; gap:12px; }
+  ol.steps li { counter-increment: s; background: var(--card); border:1px solid var(--line); border-radius:14px; padding: 14px 16px 14px 56px; position:relative; }
+  ol.steps li::before { content: counter(s); position:absolute; left:16px; top:14px; width:28px; height:28px; border-radius:50%; background:var(--accent); color:var(--accent-ink); font-weight:700; display:flex; align-items:center; justify-content:center; }
+
+  .privacy { background: var(--card); border:1px solid var(--line); border-radius:14px; padding: 18px 20px; }
+  .privacy ul { padding-left: 1.2rem; margin: 10px 0 14px; }
+  .privacy li { margin: 6px 0; }
+
+  footer { margin-top: 52px; border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: .92rem; }
+  footer .links a { margin-right: 16px; }
+
+  @media (max-width: 720px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 28px; padding-bottom: 36px; }
+    .hero .icon { order: -1; justify-content:flex-start; }
+    .hero .icon img { width: 96px; }
+    nav a { margin-left: 12px; }
+    nav .hide-sm { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top"><img src="icon-180.png" alt="" width="36" height="36">Studori</a>
+    <nav>
+      <a class="hide-sm" href="#ozellikler">Özellikler</a>
+      <a class="hide-sm" href="#nasil">Nasıl çalışır</a>
+      <a href="https://velostar007.github.io/studori-legal/">Gizlilik Politikası</a>
+    </nav>
+  </header>
+</div>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="badge">Android çalışma uygulaması</span>
+      <h1>Studori: PDF'lerinle çalışmanın akıllı yolu</h1>
+      <p class="lead">Studori; PDF'lerindeki sorulardan test oluşturmanı, çözmeni, yanlışlarını
+        tekrar etmeni ve çalışma programını tek yerden yönetmeni sağlar. Hesap açmazsın;
+        verilerin varsayılan olarak yalnızca telefonunda durur.</p>
+      <div class="btns">
+        <a class="btn primary" href="#ozellikler">Özellikleri gör</a>
+        <a class="btn" href="https://velostar007.github.io/studori-legal/">Gizlilik Politikası</a>
+      </div>
+    </div>
+    <div class="icon"><img src="icon-512.png" alt="Studori uygulama simgesi" width="240" height="240"></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="ne-icin">
+    <h2>Studori ne işe yarar?</h2>
+    <p class="sub">Sınavlara ve derslere hazırlanırken elindeki PDF'leri, videoları ve notları
+      dağınık uygulamalarda tutmak yerine tek bir çalışma alanında topla.</p>
+  </section>
+
+  <section id="ozellikler">
+    <h2>Temel özellikler</h2>
+    <p class="sub">Çalışma düzenin için ihtiyaç duyacağın araçlar bir arada.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">📄</div><h3>PDF'den test</h3>
+        <p>PDF'indeki soruları işaretle, kırp ve teste dönüştür. Soru tespiti için metin tanıma
+        cihaz üstünde çalışır; PDF'in internete gönderilmez.</p></div>
+      <div class="card"><div class="ico">✅</div><h3>Test çöz ve analiz et</h3>
+        <p>Cevap anahtarını gir, testi çöz; doğru, yanlış ve boş sayılarını ve ilerlemeni gör.</p></div>
+      <div class="card"><div class="ico">🔁</div><h3>Yanlışlarını tekrar et</h3>
+        <p>Yanlış yaptığın soruları tekrar defterinde topla ve eksik kaldığın konuları çalış.</p></div>
+      <div class="card"><div class="ico">✏️</div><h3>Not al ve çiz</h3>
+        <p>PDF üzerinde ve defterlerinde not al, çizim yap, işaretçi ekle.</p></div>
+      <div class="card"><div class="ico">🎬</div><h3>Video kütüphanesi</h3>
+        <p>YouTube videolarını ve oynatma listelerini ya da telefonundaki videoları ekle;
+        izleme ilerlemeni ve zaman notlarını tut.</p></div>
+      <div class="card"><div class="ico">🗓️</div><h3>Program ve hatırlatıcılar</h3>
+        <p>Çalışma görevlerini programına ekle, istersen hatırlatıcı kur. Bildirimler tamamen
+        telefonda zamanlanır.</p></div>
+      <div class="card"><div class="ico">🧑‍🏫</div><h3>Sınıf Modu</h3>
+        <p>Öğretmen ve öğrenciler testleri aynı Wi-Fi ağı ya da hotspot üzerinden paylaşır;
+        veriler yalnızca yerel ağda akar.</p></div>
+      <div class="card"><div class="ico">☁️</div><h3>İsteğe bağlı Drive yedeği</h3>
+        <p>İstersen verilerini kendi Google Drive hesabındaki gizli uygulama klasörüne
+        yedekle ve cihazların arasında eşitle.</p></div>
+    </div>
+  </section>
+
+  <section id="nasil">
+    <h2>Nasıl çalışır?</h2>
+    <p class="sub">Başlamak için hesap gerekmez.</p>
+    <ol class="steps">
+      <li><strong>PDF'ini ekle.</strong> Kitabını ya da deneme sınavını kütüphaneye ekle.</li>
+      <li><strong>Soruları belirle.</strong> Soruları işaretle veya kırp, cevap anahtarını gir.</li>
+      <li><strong>Çöz ve takip et.</strong> Testi çöz, sonuçlarını incele, yanlışlarını tekrar et.</li>
+    </ol>
+  </section>
+
+  <section id="gizlilik">
+    <h2>Gizlilik ve Google hesabı</h2>
+    <div class="privacy">
+      <ul>
+        <li>Studori'de hesap yoktur; PDF'lerin, testlerin, notların ve ilerlemen varsayılan
+        olarak yalnızca telefonunda saklanır.</li>
+        <li>Google ile giriş yalnızca, senin açtığın isteğe bağlı <strong>Google Drive yedekleme
+        ve eşitleme</strong> özelliği için kullanılır. Yalnızca uygulamaya özel gizli klasöre
+        (<code>drive.appdata</code>) erişim istenir; Drive'daki diğer dosyalarına erişilmez.</li>
+        <li>Reklam yoktur; reklam ya da pazarlama amacıyla izleme yapılmaz.</li>
+      </ul>
+      <a class="btn primary" href="https://velostar007.github.io/studori-legal/">Gizlilik Politikasının tamamını oku</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://velostar007.github.io/studori-legal/">Gizlilik Politikası</a>
+      <a href="mailto:studorisupport@gmail.com">studorisupport@gmail.com</a>
+    </div>
+    <p>Studori &middot; Geliştirici: Veli Abrak &middot; Android uygulaması</p>
+  </div>
+</footer>
+
+</body>
+</html>
