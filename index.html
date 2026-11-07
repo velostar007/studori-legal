@@ -19,13 +19,17 @@
   th { color: var(--muted); font-weight: 600; }
   a { color: var(--accent); }
   mark { background: #fff3a8; color: #000; padding: 0 3px; border-radius: 3px; }
+  .top-links { margin: 12px 0 0; }
+  .top-links a { display: inline-block; padding: 6px 14px; border: 1px solid var(--accent); border-radius: 999px; font-weight: 600; text-decoration: none; }
+  :target { scroll-margin-top: 12px; }
 </style>
 </head>
 <body>
 <main>
 
 <h1>Studori Gizlilik Politikası</h1>
-<p class="meta">Son güncelleme: 20 Ekim 2026 &middot; Uygulama: Studori, Android</p>
+<p class="meta">Son güncelleme: 7 Kasım 2026 &middot; Uygulama: Studori, Android</p>
+<p class="top-links"><a href="#veri-silme-talebi">Veri Silme Talebi</a></p>
 
 <div class="card">
   <strong>Kısaca:</strong> Studori'de hesap açmazsın. PDF'lerin, testlerin, notların ve
@@ -197,30 +201,39 @@ dosyasının kendisi ve küçük resmi yedeğe ya da eşitlemeye dahil edilmez.<
 <h2>4. Sınıf Modu</h2>
 <ul>
   <li>Sınıf Modu, öğretmen ve öğrenci telefonlarını aynı Wi-Fi ağı üzerinden ya da
-  öğretmenin telefonunun kurduğu yerel hotspot üzerinden birbirine bağlar. Veriler
-  yalnızca bu yerel ağdaki cihazlar arasında akar; internet üzerinden bir sunucuya
-  gönderilmez.</li>
+  öğretmenin telefonunda açtığı hotspot (internet paylaşımı) üzerinden birbirine
+  bağlar. Veriler yalnızca bu yerel ağdaki cihazlar arasında, doğrudan cihazdan cihaza
+  aktarılır; internet üzerinden bir sunucuya gönderilmez.</li>
+  <li><strong>Katılım:</strong> QR kod ile giriş yoktur. Öğretmen bir sınıf oturumu
+  başlatır ve ekranda 6 haneli bir oturum kodu görür. Öğrenci, yakındaki sınıflar
+  listesinden sınıfı seçer ve bu 6 haneli kodu girerek katılır. Kod yalnızca o
+  oturum için geçerlidir; oturum bitince kullanılamaz. Kamera kullanılmaz.</li>
+  <li><strong>Şifreleme:</strong> Öğretmen ile öğrenci arasındaki aktarım HTTPS/TLS ile
+  şifrelenir. Oturum kodu ağ üzerinden düz metin olarak gönderilmez.</li>
   <li>Öğrenci katılırken yazdığı ad ve test sonuçları öğretmenin telefonuna iletilir.
   Test ve soru görselleri öğretmenin telefonundan öğrenci telefonlarına aktarılır.</li>
   <li>Öğretmen, oturum sonuçlarını (öğrenci adları, cevapları, doğru/yanlış sayıları)
   kendi telefonunda saklar ve istersen PDF rapor olarak paylaşabilir. Öğrencinin
   çözdüğü sınıf testi yalnızca öğrencinin telefonunda kalır; öğrenci bunu istediği
   zaman silebilir. Sınıf Modu verileri Drive yedeğine eşitleme yoluyla gönderilmez.</li>
-  <li>Bu özellik için Android, "Yakındaki cihazlar" (Android 13 ve üstü) ya da "Konum"
-  (Android 12 ve altı) izni ister. Bu izin yalnızca Android'in Wi-Fi bağlantı
-  işlevleri için gereklidir; uygulama konumunu okumaz, saklamaz ve paylaşmaz.</li>
+  <li>Bu özellik, Android'in "Yakındaki cihazlar" (Android 13 ve üstü) ve "Konum"
+  (Android 12 ve altı) izinlerini ve Wi-Fi/ağ durumu izinlerini bildirir. Bunlar
+  yalnızca Android'in yerel ağ ve Wi-Fi bağlantı işlevleri için bildirilir; uygulama
+  konumunu okumaz, saklamaz ve paylaşmaz.</li>
 </ul>
 
 <h2>5. İzinler</h2>
 <table>
   <tr><th>İzin</th><th>Ne için</th></tr>
   <tr><td>İnternet</td><td>Drive, YouTube, abonelik, çökme raporları ve çeviri modeli indirme.</td></tr>
-  <tr><td>Kamera</td><td>Karekod okutma (Sınıf Modu'na katılma ve sorulardaki karekodları okuma). Görüntüler saklanmaz ve gönderilmez.</td></tr>
   <tr><td>Dosya seçici (cihazdan video)</td><td>Seçtiğin videoya erişmek için Android'in kendi dosya seçicisi kullanılır; genel depolama izni istenmez.</td></tr>
-  <tr><td>Bildirimler</td><td>İstersen açtığın çalışma hatırlatıcıları. Bildirimler tamamen telefonda zamanlanır.</td></tr>
+  <tr><td>Bildirimler ve titreşim</td><td>İstersen açtığın çalışma hatırlatıcıları. Bildirimler tamamen telefonda zamanlanır.</td></tr>
   <tr><td>Cihaz açıldığında çalışma</td><td>Hatırlatıcıların telefon yeniden başladıktan sonra yeniden kurulması.</td></tr>
-  <tr><td>Wi-Fi ve ağ durumu, Yakındaki cihazlar / Konum</td><td>Yalnızca Sınıf Modu (yukarıya bak).</td></tr>
+  <tr><td>Wi-Fi ve ağ durumu (okuma ve değiştirme), Yakındaki cihazlar / Konum</td><td>Yalnızca Sınıf Modu'nda yerel ağ ve Wi-Fi bağlantı işlevleri için (yukarıya bak). Uygulama konumunu okumaz, saklamaz ve paylaşmaz.</td></tr>
+  <tr><td>Google Play Faturalandırma</td><td>Premium aboneliğin satın alınması (3. bölümde anlatıldı).</td></tr>
+  <tr><td>Cihazı uyanık tutma, biyometrik / parmak izi</td><td>Kullanılan kitaplıkların (örneğin Google Play hizmetleri ve abonelik kitaplığı) manifestlerinden uygulamaya eklenir. Studori kendi özelliklerinde parmak izi veya yüz tanıma kullanmaz ve biyometrik veri işlemez.</td></tr>
 </table>
+<p>Uygulama kamera iznini istemez ve kamerayı kullanmaz.</p>
 
 <h2>6. Reklam ve izleme</h2>
 <p>Uygulamada reklam yoktur. Reklam veya pazarlama amacıyla davranışını profilleyen
@@ -237,9 +250,39 @@ toplamayız. Küçük yaştaki kullanıcıların uygulamayı kullanırken bir eb
 gözetiminde olmasını öneririz.</p>
 <!-- YAYIN ÖNCESİ KONTROL: Play Console'da hedef yaş grubunu bu bölümle tutarlı seç. -->
 
-<h2>8. Haklarınız ve veri silme</h2>
+<h2 id="veri-silme-talebi">8. Veri Silme Talebi ve haklarınız</h2>
+<div class="card">
+  <strong>Veri silme taleplerini</strong>
+  <a href="mailto:studorisupport@gmail.com?subject=Studori%20Veri%20Silme%20Talebi">studorisupport@gmail.com</a>
+  adresinden alırız. Studori'de hesap olmadığı için geliştiricinin sunucularında
+  PDF, test, not veya çalışma verin tutulmaz; aşağıda her veri türünün nerede durduğu
+  ve nasıl silineceği anlatılır.
+</div>
 <ul>
-  <li>Cihazdaki verileri uygulamayı kaldırarak silebilirsin.</li>
+  <li><strong>PDF, test, not ve çalışma verileri:</strong> Bunlar yalnızca telefonunda
+  durur; geliştirici bunlara erişemez ve silemez. Uygulama içinden kendi PDF'lerini,
+  testlerini ve notlarını silebilirsin; uygulamayı telefondan kaldırırsan tüm yerel
+  Studori verileri silinir.</li>
+  <li><strong>Google Drive yedekleri:</strong> Yedekleme özelliğini açtıysan yedek ve
+  eşitleme dosyaları senin Google Drive hesabındadır. Uygulamada Ayarlar &rarr;
+  Yedekleme bölümünden silebilirsin (aşağıya bak). Bu veriyi geliştirici silemez.</li>
+  <li><strong>RevenueCat anonim müşteri kayıtları:</strong> Abonelik doğrulaması için
+  RevenueCat'te anonim bir müşteri kaydı tutulur. Bu kaydın silinmesini istersen
+  yukarıdaki destek e-postasına silme talebi gönderebilirsin. Müşteri kaydını silmek
+  Google Play aboneliğini iptal etmez: aboneliği Google Play'den ayrıca iptal etmen
+  gerekir. Uygulama bu kaydı senin yerine uygulama içinden silemez.</li>
+  <li><strong>Firebase Crashlytics tanılama verileri:</strong> Bu raporlar Studori'nin
+  eklediği bir kullanıcı kimliği içermez; yalnızca Firebase'in ürettiği rastgele kurulum
+  ve oturum kimlikleri taşır. Bu nedenle tek bir kişinin raporlarını ayıklayıp silmek
+  sınırlı olabilir ve uygulama bunları silemez. Firebase, Crashlytics verilerini yaklaşık 90 gün saklar, ardından
+  silme sürecini başlatır.</li>
+  <li><strong>Android sistem yedeği:</strong> Android'in kendi yedeğine girebilen
+  küçük abonelik kaydı (anonim RevenueCat kimliği ve abonelik durumu önbelleği),
+  Android ve Google'ın yedekleme ayarlarıyla yönetilir; uygulamayı kaldırmak o yedeği
+  kendiliğinden silmeyebilir. Yedeği cihazının Android ayarlarından yönetebilirsin
+  (menüler üreticiye göre değişebilir).</li>
+  <li><strong>YouTube ve Google:</strong> YouTube veya Google hesabındaki veriler bu
+  uygulamanın değil, Google'ın sorumluluğundadır; onları Google hesabından yönetirsin.</li>
   <li>Android sistem yedeğine dahil edilebilen küçük abonelik kaydı (anonim RevenueCat
   kimliği ve abonelik durumu önbelleği), Android ve Google'ın kendi yedekleme
   ayarlarıyla yönetilir; uygulamayı kaldırmak o yedeği kendiliğinden silmeyebilir.
@@ -248,9 +291,9 @@ gözetiminde olmasını öneririz.</p>
   <li>Drive'daki yedek/eşitleme verisini uygulamadan (Ayarlar &rarr; Yedekleme
   &rarr; &ldquo;Drive'daki tüm verilerimi sil&rdquo;) ya da Google hesabının Drive
   ayarlarından silebilirsin.</li>
-  <li>Çökme raporlarındaki verin için ya da başka bir talebin için yukarıdaki iletişim
-  adresine yazabilirsin. Kişisel Verilerin Korunması Kanunu (KVKK) kapsamındaki
-  haklarını da aynı adresten kullanabilirsin.</li>
+  <li>Başka bir talebin için yukarıdaki iletişim adresine yazabilirsin. Kişisel
+  Verilerin Korunması Kanunu (KVKK) kapsamındaki haklarını da aynı adresten
+  kullanabilirsin.</li>
 </ul>
 
 <h2>9. Değişiklikler</h2>
@@ -283,9 +326,17 @@ backups or sync files. The embedded YouTube player
 may contact YouTube directly. Text recognition and translation (Google ML Kit) run
 on-device. Videos you add from your phone are played in place through Android's file picker
 (no broad storage permission) and are never uploaded. Classroom Mode transfers data only between
-devices on the same local network; Android's Nearby devices/Location permission is required by the
-Wi-Fi APIs, and the app never reads or stores location. You can delete all backup and sync data
-from your Google Drive inside the app (Settings &rarr; Backup &rarr; delete all my Drive data).
+devices on the same local network, encrypted with HTTPS/TLS. There is no QR sign-in: the teacher
+starts a session and shows a 6-digit session code, and the student picks the class and enters
+that code. The app does not use the camera; the Nearby devices/Location and Wi-Fi state
+permissions are declared only for local-network Wi-Fi functions, and the app never reads or stores
+location. <strong>Data deletion requests</strong> (<a href="#veri-silme-talebi">section 8</a>) are
+received at studorisupport@gmail.com. PDFs, tests, notes and study data stay on your device and
+you can delete them there. You can delete all backup and sync data from your Google Drive inside
+the app (Settings &rarr; Backup &rarr; delete all my Drive data). For RevenueCat anonymous customer
+records you can send a deletion request to the support e-mail; deleting the customer record does
+not cancel your Google Play subscription. Crashlytics diagnostic data is kept for about 90 days and
+individual deletion options are limited; the app cannot delete it.
 There are no ads, no Google Analytics SDK, and no marketing or behavioral profiling. The
 third-party services described above are used only for their stated purposes. Developer: Veli Abrak. Contact:
 <a href="mailto:studorisupport@gmail.com">studorisupport@gmail.com</a>.</p>
