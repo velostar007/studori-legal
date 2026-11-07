@@ -57,15 +57,22 @@ otomatik yedekleyebilir veya yeni bir cihaza aktarabilir. Bu, Android'in kendi
 özelliğidir ve aşağıda anlatılan, yalnızca senin açtığın Google Drive yedekleme ve
 eşitleme özelliğinden ayrıdır.</p>
 <ul>
-  <li><strong>Neler dahildir:</strong> Studori, Android sistem yedeğine yalnızca
-  abonelik hizmeti RevenueCat'in cihazda tuttuğu küçük bir tercih dosyasını dahil
-  eder. Bu dosya RevenueCat'in anonim kullanıcı kimliğini ve abonelik/erişim
-  durumuna ilişkin önbelleği içerebilir.</li>
+  <li><strong>Neler dahildir:</strong> Studori, Android sistem yedeğine (bulut yedeği)
+  ve cihazdan cihaza aktarıma yalnızca iki küçük tercih dosyasını dahil eder:
+  <br>(1) abonelik hizmeti RevenueCat'in cihazda tuttuğu tercih dosyası
+  (<code>com_revenuecat_purchases_preferences.xml</code>): RevenueCat'in anonim
+  kullanıcı kimliğini ve abonelik/erişim durumuna ilişkin önbelleği içerebilir;
+  <br>(2) uygulamanın <code>FlutterSharedPreferences.xml</code> dosyası: içinde yalnızca
+  ücretsiz sürümdeki kullanım hakkı sayaçlarının (ücretsiz sürümde şimdiye kadar
+  oluşturduğun içerik sayılarının) birkaç sayıdan oluşan bir kopyası tutulur.</li>
   <li><strong>Ne için:</strong> Uygulamayı yeniden kurduğunda ya da yeni bir cihaza
-  geçtiğinde satın alma kaydının sürmesine yardımcı olmak için kullanılabilir.</li>
-  <li><strong>Neler dahil değildir:</strong> RevenueCat'e ait sınırlı tercih kaydı
-  dışında Studori'nin PDF, test, soru, not, çizim, görsel, kullanıcı ayarı ve diğer
-  kullanıcı içerikleri Android sistem yedeğine alınmaz.</li>
+  geçtiğinde satın alma kaydının sürmesine ve ücretsiz kullanım hakkı sayaçlarının
+  yeniden kurulumla sıfırlanmamasına yardımcı olmak için kullanılabilir.</li>
+  <li><strong>Neler dahil değildir:</strong> Bu iki küçük dosya dışında hiçbir şey
+  Android sistem yedeğine alınmaz: Studori'nin PDF, test, soru, not, çizim, görsel,
+  kullanıcı ayarı, önbellek ve diğer kullanıcı içerikleri ile uygulamanın varsayılan
+  tercih dosyası (örneğin Drive bağlantısı için tutulan Google hesabı e-posta adresi)
+  yedeğe girmez. Sınıf Modu kalıcı bir şey saklamaz, dolayısıyla yedeğe de girmez.</li>
 </ul>
 
 <h3>Cihazdan video ekleme</h3>
@@ -139,8 +146,8 @@ dosyasının kendisi ve küçük resmi yedeğe ya da eşitlemeye dahil edilmez.<
   bilgisindeki aktif Premium erişim hakkına göre belirlenir. Uygulama son bilinen
   abonelik durumunu cihazda bilgi amacıyla da saklayabilir; bu kayıt tek başına
   Premium özellikleri açmaz.</li>
-  <li>RevenueCat'in cihazdaki küçük tercih dosyası, Android sistem yedeğine dahil
-  edilebilir (yukarıdaki &ldquo;Android sistem yedeği&rdquo; bölümüne bak).</li>
+  <li>RevenueCat'in cihazdaki küçük tercih dosyası (ve ücretsiz kullanım hakkı
+  sayaçlarının kopyası), Android sistem yedeğine dahil edilebilir (yukarıdaki &ldquo;Android sistem yedeği&rdquo; bölümüne bak).</li>
 </ul>
 
 <h3>YouTube video kütüphanesi</h3>
@@ -276,18 +283,14 @@ gözetiminde olmasını öneririz.</p>
   ve oturum kimlikleri taşır. Bu nedenle tek bir kişinin raporlarını ayıklayıp silmek
   sınırlı olabilir ve uygulama bunları silemez. Firebase, Crashlytics verilerini yaklaşık 90 gün saklar, ardından
   silme sürecini başlatır.</li>
-  <li><strong>Android sistem yedeği:</strong> Android'in kendi yedeğine girebilen
-  küçük abonelik kaydı (anonim RevenueCat kimliği ve abonelik durumu önbelleği),
-  Android ve Google'ın yedekleme ayarlarıyla yönetilir; uygulamayı kaldırmak o yedeği
-  kendiliğinden silmeyebilir. Yedeği cihazının Android ayarlarından yönetebilirsin
-  (menüler üreticiye göre değişebilir).</li>
+  <li><strong>Android sistem yedeği:</strong> Android'in kendi yedeğine girebilen iki
+  küçük kayıt (anonim RevenueCat kimliği ve abonelik durumu önbelleği ile ücretsiz
+  kullanım hakkı sayaçlarının kopyası), Android ve Google'ın yedekleme ayarlarıyla
+  yönetilir; uygulamayı kaldırmak o yedeği kendiliğinden silmeyebilir. Yedeği
+  cihazının Android ayarlarından yönetebilirsin (menüler üreticiye göre değişebilir).
+  Uygulama bu yedeği senin yerine silemez.</li>
   <li><strong>YouTube ve Google:</strong> YouTube veya Google hesabındaki veriler bu
   uygulamanın değil, Google'ın sorumluluğundadır; onları Google hesabından yönetirsin.</li>
-  <li>Android sistem yedeğine dahil edilebilen küçük abonelik kaydı (anonim RevenueCat
-  kimliği ve abonelik durumu önbelleği), Android ve Google'ın kendi yedekleme
-  ayarlarıyla yönetilir; uygulamayı kaldırmak o yedeği kendiliğinden silmeyebilir.
-  Yedeği cihazının Android ayarlarından yönetebilirsin (menüler üreticiye göre
-  değişebilir).</li>
   <li>Drive'daki yedek/eşitleme verisini uygulamadan (Ayarlar &rarr; Yedekleme
   &rarr; &ldquo;Drive'daki tüm verilerimi sil&rdquo;) ya da Google hesabının Drive
   ayarlarından silebilirsin.</li>
@@ -312,10 +315,15 @@ path may unintentionally contain limited technical details. Firebase keeps this 
 90 days, and there is currently no in-app switch to turn reports off. We use Google Play
 Billing with RevenueCat for subscriptions (anonymous user ID and purchase status; card details never reach
 the app); Premium access follows the active entitlement reported by RevenueCat. Android's own system
-backup includes only RevenueCat's small preferences file (the anonymous user ID and cached
-subscription status), so a purchase can carry over after a reinstall or device change; apart from
-that limited RevenueCat preferences record, Studori's PDFs, tests, questions, notes, drawings, images,
-user settings and other user content are not included in the Android system backup. It is separate from the optional Google Drive backup/sync. The YouTube video library uses YouTube API Services (see the YouTube Terms of
+backup and device-to-device transfer include only two small preferences files: RevenueCat's
+preferences file (the anonymous user ID and cached subscription status) and the app's
+FlutterSharedPreferences.xml, which holds only a copy of the free tier's usage counters (a few
+numbers counting the content you have created on the free plan). They let a purchase carry over
+and keep the free-plan counters from resetting after a reinstall or device change. Nothing else
+is included: Studori's PDFs, tests, questions, notes, drawings, images, user settings, caches,
+the app's default preferences file (such as the Google account e-mail kept for Drive) and other
+user content are not in the Android system backup. Classroom Mode stores nothing persistent. The
+system backup is separate from the optional Google Drive backup/sync. The YouTube video library uses YouTube API Services (see the YouTube Terms of
 Service, the YouTube API Services Terms of Service and the Google Privacy Policy): Studori
 does not sign in to YouTube or access your YouTube account; video and playlist details fetched
 from the API are kept on your device only temporarily, refreshed from day 25, and cleared from
