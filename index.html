@@ -28,7 +28,7 @@
 <main>
 
 <h1>Studori Gizlilik Politikası</h1>
-<p class="meta">Son güncelleme: 7 Kasım 2026 &middot; Uygulama: Studori, Android</p>
+<p class="meta">Son güncelleme: 15 Kasım 2026 &middot; Uygulama: Studori, Android</p>
 <p class="top-links"><a href="#veri-silme-talebi">Veri Silme Talebi</a></p>
 
 <div class="card">
@@ -199,10 +199,22 @@ dosyasının kendisi ve küçük resmi yedeğe ya da eşitlemeye dahil edilmez.<
   geçerlidir.</li>
 </ul>
 
-<h3>Çeviri (Google ML Kit)</h3>
+<h3>Google ML Kit (metin tanıma, karekod okuma, çeviri)</h3>
 <ul>
-  <li>Çeviri cihaz üstünde çalışır. İlk kullanımda dil modeli Google'dan indirilir;
-  çevrilen metin gönderilmez.</li>
+  <li><strong>İçerik:</strong> Metin tanıma, karekod okuma ve çeviri cihaz üstünde
+  çalışır. Google'ın ML Kit şartlarına göre işlenen girdi verisi ve çıktıları Google
+  sunucularına gönderilmez; çevrilen metin de gönderilmez.</li>
+  <li><strong>Ölçüm bilgisi:</strong> Aynı şartlara göre ML Kit, uygulamada kullanılan
+  API'lerin performansına ve kullanımına ilişkin ölçümleri Google'a gönderir. Google bu
+  ölçümleri API'lerin performansını ölçmek, hata ayıklamak, bakımını yapmak ve
+  geliştirmek ile kötüye kullanımı tespit etmek için kullandığını belirtir. Ölçümlerin
+  ayrıntılı kapsamını Google belirler; Studori bu ölçümlere kendi eklediği bir kullanıcı
+  kimliği ya da içerik koymaz. Uygulama içinde bu ölçümleri kapatan bir ayar yoktur.</li>
+  <li><strong>Model indirme:</strong> İlk çeviri kullanımında dil modeli Google'dan
+  indirilir. ML Kit ayrıca model güncellemeleri, hata düzeltmeleri ve donanım
+  uyumluluğu bilgisi için zaman zaman Google sunucularıyla iletişim kurabilir.</li>
+  <li>Ayrıntılar için <a href="https://developers.google.com/ml-kit/terms">Google ML
+  Kit şartlarına</a> bakabilirsin.</li>
 </ul>
 
 <h2>4. Sınıf Modu</h2>
@@ -251,10 +263,19 @@ raporları için Firebase Crashlytics ve ona bağlı Firebase kurulum, oturum ve
 gönderme bileşenleri, abonelik için RevenueCat (ikisi de 3. bölümde anlatıldı).
 Studori bunları reklam ya da pazarlama için kullanmaz.</p>
 
-<h2>7. Çocuklar</h2>
-<p>Studori hesap oluşturmayı gerektirmez ve geliştirici olarak çocuklara ait kişisel veri
-toplamayız. Küçük yaştaki kullanıcıların uygulamayı kullanırken bir ebeveyn veya veli
-gözetiminde olmasını öneririz.</p>
+<h2>7. Çocuklar ve yaş</h2>
+<p>Studori hesap oluşturmayı gerektirmez ve kullanıcıdan yaş ya da doğum tarihi sormaz.
+Uygulamayı kullanan herkes için, yaşı küçük olanlar için de, 3. bölümde anlatılan teknik
+hizmetler (çökme raporları, abonelik doğrulama, Google ML Kit, YouTube ve Google
+hizmetleri) aynı şekilde çalışır; bu hizmetlerin işlediği veriler o bölümde sayılmıştır.</p>
+<p>Studori'nin kendi sunucusu yoktur; PDF, test ve notlar varsayılan olarak cihazda kalır.
+Sınıf Modu'nda öğrencinin yazdığı ad ve test sonuçları yalnızca yerel ağda öğretmenin
+telefonuna iletilir; geliştiriciye gönderilmez ve öğretmenin telefonunda saklanır
+(4. bölüm).</p>
+<p>Küçük yaştaki kullanıcıların uygulamayı bir ebeveyn veya veli bilgisiyle kullanmasını
+öneririz. Bir çocuğa ait olabilecek verilerin silinmesi ya da başka bir talep için
+<a href="mailto:studorisupport@gmail.com">studorisupport@gmail.com</a> adresine
+yazabilirsin.</p>
 <!-- YAYIN ÖNCESİ KONTROL: Play Console'da hedef yaş grubunu bu bölümle tutarlı seç. -->
 
 <h2 id="veri-silme-talebi">8. Veri Silme Talebi ve haklarınız</h2>
@@ -331,8 +352,17 @@ storage once the 30-day retention period ends if they cannot be refreshed (if th
 running at that moment, the cleanup happens the next time it is opened or brought to the
 foreground; your own titles, notes and progress are not affected), and are not included in Drive
 backups or sync files. The embedded YouTube player
-may contact YouTube directly. Text recognition and translation (Google ML Kit) run
-on-device. Videos you add from your phone are played in place through Android's file picker
+may contact YouTube directly. Text recognition, barcode scanning and translation (Google ML Kit)
+run on-device: according to Google's ML Kit terms, the input data and outputs are not sent to
+Google's servers, but ML Kit sends metrics about the performance and use of its APIs to Google
+(which Google says it uses to measure performance, debug, maintain and improve the APIs and to
+detect misuse), and it may contact Google's servers for model updates, bug fixes and hardware
+accelerator compatibility information; the translation language model is downloaded on first
+use. There is no in-app switch for these metrics. Studori has no accounts, does not ask for age or
+date of birth, and has no servers of its own; the technical services above work the same for
+every user, including minors. In Classroom Mode a student's typed name and results go only to the
+teacher's phone over the local network, are not sent to the developer, and are stored on the
+teacher's phone. Parents or guardians are encouraged to supervise young users. Videos you add from your phone are played in place through Android's file picker
 (no broad storage permission) and are never uploaded. Classroom Mode transfers data only between
 devices on the same local network, encrypted with HTTPS/TLS. There is no QR sign-in: the teacher
 starts a session and shows a 6-digit session code, and the student picks the class and enters
